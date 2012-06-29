@@ -4,8 +4,6 @@ import java.util.Comparator;
 import java.util.Hashtable;
 import java.util.Vector;
 
-import org.apache.log4j.Logger;
-
 import processing.core.PGraphics;
 import processing.core.PVector;
 import de.fhpotsdam.unfolding.core.Coordinate;
@@ -29,8 +27,6 @@ public abstract class AbstractMapDisplay implements TileLoaderListener {
 	private static final long MEMORY_THRESHOLD_BYTES = 300000;
 	// Number of tile images to delete.
 	private static final int MEMORY_THRESHOLD_IMAGES = 25;
-
-	public static Logger log = Logger.getLogger(AbstractMapDisplay.class);
 
 	// Dimension of this map display
 	protected float width;
@@ -285,11 +281,11 @@ public abstract class AbstractMapDisplay implements TileLoaderListener {
 	 */
 	protected void cleanupImageBuffer() {
 		if (recent_images.size() > max_images_to_keep) {
-			log.info("Cleaning image buffer due to MAX_IMAGE reached.");
+			System.out.println("Cleaning image buffer due to MAX_IMAGE reached.");
 			recent_images.subList(0, recent_images.size() - max_images_to_keep).clear();
 			images.values().retainAll(recent_images);
 		} else if (Runtime.getRuntime().freeMemory() < MEMORY_THRESHOLD_BYTES) {
-			log.info("Cleaning image buffer due to MEMORY_THRESHOLD reached.");
+			System.out.println("Cleaning image buffer due to MEMORY_THRESHOLD reached.");
 			int imagesToDelete = recent_images.size() > MEMORY_THRESHOLD_IMAGES ? MEMORY_THRESHOLD_IMAGES
 					: recent_images.size();
 			recent_images.subList(0, imagesToDelete).clear();

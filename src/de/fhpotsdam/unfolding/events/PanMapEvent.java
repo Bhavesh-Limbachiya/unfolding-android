@@ -1,13 +1,9 @@
 package de.fhpotsdam.unfolding.events;
 
-import org.apache.log4j.Logger;
-
 import de.fhpotsdam.unfolding.Map;
 import de.fhpotsdam.unfolding.geo.Location;
 
 public class PanMapEvent extends MapEvent {
-
-	protected static Logger log = Logger.getLogger(PanMapEvent.class);
 
 	public static final String TYPE_PAN = "pan";
 

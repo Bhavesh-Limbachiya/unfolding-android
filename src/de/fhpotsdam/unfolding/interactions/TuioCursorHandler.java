@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
-import org.apache.log4j.Logger;
-
 import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PVector;
@@ -24,7 +22,6 @@ import de.fhpotsdam.unfolding.geo.Location;
 // REVISIT Check how to use simpletouch's TuioTransformableObject. For use in events, as in here.
 public class TuioCursorHandler extends MapEventBroadcaster implements TuioListener {
 
-	public static Logger log = Logger.getLogger(TuioCursorHandler.class);
 
 	private PApplet p;
 
@@ -83,12 +80,7 @@ public class TuioCursorHandler extends MapEventBroadcaster implements TuioListen
 			if (map.isHit(x, y)) {
 
 				if (tuioCursor1 != null && tuioCursor2 != null) {
-					// Two fingers: Zoom + Rotate
-					// FIXME In very high zoom levels zooming is off. Precision problem?
-					// (float/double)
-
-					// Uses inner zoom and inner rotation, thus fingers are on same location
-					// TODO Do study on usability for different interaction approaches.
+					// Two fingers: Zoom + PAN
 
 					// Flags to test various combinations
 					boolean zoom = true;

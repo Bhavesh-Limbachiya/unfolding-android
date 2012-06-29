@@ -5,8 +5,6 @@ import java.awt.event.MouseEvent;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import processing.core.PApplet;
 import processing.core.PConstants;
 import de.fhpotsdam.unfolding.Map;
@@ -16,8 +14,6 @@ import de.fhpotsdam.unfolding.events.ZoomMapEvent;
 import de.fhpotsdam.unfolding.geo.Location;
 
 public class MouseHandler extends MapEventBroadcaster {
-
-	public static Logger log = Logger.getLogger(MouseHandler.class);
 
 	public MouseHandler(PApplet p, Map... maps) {
 		this(p, Arrays.asList(maps));

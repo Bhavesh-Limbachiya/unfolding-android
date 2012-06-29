@@ -2,8 +2,6 @@ package de.fhpotsdam.unfolding;
 
 import java.util.UUID;
 
-import org.apache.log4j.Logger;
-
 import processing.core.PApplet;
 import processing.core.PVector;
 import de.fhpotsdam.unfolding.events.MapEvent;
@@ -44,8 +42,6 @@ public class Map implements MapEventListener {
 	protected Location restrictedPanLocation = null;
 	/** The maximum distance to the center location of the restricted pan area. */
 	protected float maxPanningDistance;
-
-	public static Logger log = Logger.getLogger(Map.class);
 
 	/** The Processing applet. */
 	protected PApplet p;

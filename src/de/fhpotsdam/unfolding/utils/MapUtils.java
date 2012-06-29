@@ -7,8 +7,9 @@ import de.fhpotsdam.unfolding.Map;
 import de.fhpotsdam.unfolding.events.EventDispatcher;
 import de.fhpotsdam.unfolding.events.PanMapEvent;
 import de.fhpotsdam.unfolding.events.ZoomMapEvent;
-import de.fhpotsdam.unfolding.interactions.KeyboardHandler;
-import de.fhpotsdam.unfolding.interactions.MouseHandler;
+//import de.fhpotsdam.unfolding.interactions.KeyboardHandler;
+//import de.fhpotsdam.unfolding.interactions.MouseHandler;
+import de.fhpotsdam.unfolding.interactions.TuioCursorHandler;
 
 public class MapUtils {
 
@@ -25,11 +26,14 @@ public class MapUtils {
 	public static EventDispatcher createDefaultEventDispatcher(PApplet p, Map... maps) {
 		EventDispatcher eventDispatcher = new EventDispatcher();
 
-		MouseHandler mouseHandler = new MouseHandler(p, maps);
-		KeyboardHandler keyboardHandler = new KeyboardHandler(p, maps);
-
-		eventDispatcher.addBroadcaster(mouseHandler);
-		eventDispatcher.addBroadcaster(keyboardHandler);
+		//MouseHandler mouseHandler = new MouseHandler(p, maps);
+		
+		//KeyboardHandler keyboardHandler = new KeyboardHandler(p, maps);
+		TuioCursorHandler tuioHandler = new TuioCursorHandler(p,maps);
+		
+		//eventDispatcher.addBroadcaster(mouseHandler);
+		//eventDispatcher.addBroadcaster(keyboardHandler);
+		eventDispatcher.addBroadcaster(tuioHandler);
 
 		for (Map map : maps) {
 			eventDispatcher.register(map, PanMapEvent.TYPE_PAN, map.getId());

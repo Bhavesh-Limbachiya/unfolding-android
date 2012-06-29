@@ -3,8 +3,6 @@ package de.fhpotsdam.unfolding.mapdisplay;
 import java.util.Collections;
 import java.util.Vector;
 
-import org.apache.log4j.Logger;
-
 import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PFont;
@@ -20,8 +18,6 @@ import de.fhpotsdam.unfolding.tiles.TileLoader;
 
 @SuppressWarnings("unchecked")
 public class ProcessingMapDisplay extends AbstractMapDisplay implements PConstants {
-
-	public static Logger log = Logger.getLogger(ProcessingMapDisplay.class);
 
 	// Used for loadImage and float maths
 	public PApplet papplet;

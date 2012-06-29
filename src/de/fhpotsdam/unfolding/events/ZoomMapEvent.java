@@ -1,15 +1,11 @@
 package de.fhpotsdam.unfolding.events;
 
-import org.apache.log4j.Logger;
-
 import processing.core.PApplet;
 import processing.core.PVector;
 import de.fhpotsdam.unfolding.Map;
 import de.fhpotsdam.unfolding.geo.Location;
 
 public class ZoomMapEvent extends MapEvent {
-
-	protected static Logger log = Logger.getLogger(ZoomMapEvent.class);
 
 	public static final String TYPE_ZOOM = "zoom";
 

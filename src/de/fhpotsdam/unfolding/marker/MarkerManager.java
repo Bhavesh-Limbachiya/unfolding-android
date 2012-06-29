@@ -3,8 +3,6 @@ package de.fhpotsdam.unfolding.marker;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import de.fhpotsdam.unfolding.Map;
 import de.fhpotsdam.unfolding.utils.GeoUtils;
 
@@ -13,8 +11,6 @@ import de.fhpotsdam.unfolding.utils.GeoUtils;
  * 
  */
 public class MarkerManager<E extends Marker> {
-
-	public static Logger log = Logger.getLogger(MarkerManager.class);
 
 	Map map;
 	List<E> markers;

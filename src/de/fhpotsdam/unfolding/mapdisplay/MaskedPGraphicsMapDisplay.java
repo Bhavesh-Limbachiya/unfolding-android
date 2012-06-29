@@ -1,8 +1,9 @@
 package de.fhpotsdam.unfolding.mapdisplay;
 
-import processing.core.PApplet;
-import processing.core.PConstants;
-import processing.core.PGraphics;
+import processing.core.*;
+
+//import processing.core.PConstants;
+//import processing.core.PGraphics;
 import de.fhpotsdam.unfolding.providers.AbstractMapProvider;
 
 
